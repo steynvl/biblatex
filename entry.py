@@ -1,11 +1,26 @@
 class Entry:
+    """
+    Represents an entry in a LaTeX bib file
+    """
 
     def __init__(self, start, end, text):
-        self._start = start
-        self._end = end
-        self._text = text
+        self.__start = start
+        self.__end = end
+        self.__text = text
+
+    @property
+    def start(self):
+        return self.__start
+
+    @property
+    def end(self):
+        return self.__end
+
+    @property
+    def text(self):
+        return self.__text
 
     def __str__(self):
-        return '({}, {}):\n{}'.format(self._start,
-                                     self._end,
-                                     self._text)
+        return '({}, {}):\n{}'.format(self.start,
+                                      self.end,
+                                      self.text)
